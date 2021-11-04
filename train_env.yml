@@ -1,0 +1,19 @@
+name: train
+channels:
+    - conda-forge
+    - defaults
+    - pytorch
+dependencies:
+    - python=3.8.5
+    - numpy=1.19.2
+    - pandas=1.1.3
+    - pytorch=1.8.1
+    - h5py=2.10.0
+    - scipy=1.5.2
+    - scikit-learn=0.23.2
+    - pyyaml=5.3.1
+    - lifelines=0.26.0
+    - tensorboard=2.4.0
+    - pip
+    - pip:
+        - elasticdeform==0.4.9
