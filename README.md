@@ -31,3 +31,9 @@ In order to train the model you have to run:
 python main.py [--gpu <GPU_INDEX>] parameter/par.yml
 ```
 in the `survival/` folder with the `(train)` conda environment.
+
+### Pretrained weights 
+
+The pre-trained weights can be downloaded from
+[here](https://syncandshare.lrz.de/getlink/fiKHFuRVVsqcaR5CpvVweYNb/C3D_weights.h5)
+and have to be placed in the `data/weights/` folder.
