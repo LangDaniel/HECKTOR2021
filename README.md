@@ -30,7 +30,7 @@ In order to train the model you have to run:
 ```
 python main.py [--gpu <GPU_INDEX>] parameter/par.yml
 ```
-in the `survival/` folder with the `(train)` conda environment.
+in the `train/` folder with the `(train)` conda environment.
 
 ### Pretrained weights 
 
