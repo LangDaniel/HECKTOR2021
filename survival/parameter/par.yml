@@ -1,0 +1,76 @@
+output:
+    folder: './output/paper'
+    sub: 'run'
+
+training:
+    epochs: 75
+    workers: 20
+data:
+    general:
+        shape: [96, 96, 96]
+        batch_size: 16
+        channel_first: True
+        split_color: True
+        patch_file: './../data/patch_data/HECKTOR_train_patches.h5' 
+        breaks: [0.0, 182.5, 365.0, 547.5, 730.0, 912.5, 1095.0, 1277.5, 1460.0,
+                1642.5, 1825.0, 2190.0, 2555.0, 2920.0, 3285.0, 3650.0]
+        cat_input: [
+            'center',
+            'gender',
+            'age',
+            'tnm_stage',
+            'hpv_status',
+            'chemo',
+            't_stage',
+            'n_stage',
+            'm_stage',
+            'tobacco',
+            'alcohol',
+            'performance',
+        ]
+        #    'tnm_edition',
+        #    'suv_weight',
+
+    train:
+        label_file: '../data/survival_label/train.csv' 
+        training: True
+        augment:
+            flip: True
+            rot: True
+            zoom: False #[1.0, 1.15]
+            offset: False #[-2.5, 2.5]
+            noise:
+                type: 'gaussian'
+                variance: [0., 1.]
+            deform:
+                sigma: [0.0, 1.0]
+                points: [3, 3, 3]
+    valid:
+        label_file: '../data/survival_label/valid.csv' 
+        training: False
+
+model:
+    size:
+        input_size: [3, 32, 96, 96]
+
+        conv_head:
+            dense_units: [512]
+            dense_drop: [0.5]
+
+        surv_head:
+            dense_units: [256]
+            dense_drop: [0.5]
+            out_act: 'non_prop'
+
+    optimizer:
+        name: 'adam'
+        lr: 0.00005
+        eps: '1e-7'
+
+    loss:
+        type: 'nnet_survival'
+
+
+    trained:
+        use: True
+        path: '../data/weights/C3D_weights.h5' 
