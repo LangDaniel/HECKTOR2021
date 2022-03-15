@@ -51,4 +51,5 @@ and have to be placed in the `data/weights/` folder.
         year={2022},
         publisher={{Springer International Publishing}},
         pages={150--159},
+}
 ```
