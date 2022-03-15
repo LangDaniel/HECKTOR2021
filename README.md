@@ -38,3 +38,17 @@ in the `train/` folder with the `(train)` conda environment.
 The pre-trained weights can be downloaded from
 [here](https://syncandshare.lrz.de/getlink/fiKHFuRVVsqcaR5CpvVweYNb/C3D_weights.h5)
 and have to be placed in the `data/weights/` folder.
+
+### Cite as
+
+```
+@inproceedings{lang2022deep,
+        title={{Deep Learning Based GTV Delineation and Progression Free Survival Risk Score Prediction
+                for Head and Neck Cancer Patients}},  
+        author={Lang, Daniel M. and Peeken, Jan C. and Combs, Stephanie E. and
+                Wilkens, Jan J. and Bartzsch, Stefan},  
+        booktitle={{Head and Neck Tumor Segmentation and Outcome Prediction}},
+        year={2022},
+        publisher={{Springer International Publishing}},
+        pages={150--159},
+```
