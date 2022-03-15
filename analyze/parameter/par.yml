@@ -1,0 +1,4 @@
+label_file: './../data/survival_label/valid.csv' 
+patch_file: './../data/patch_files/Heckor2021_patches.h5'
+trained_folder: './../train/output/paper/run_0'
+checkpoint: 'best_loss.pth'
