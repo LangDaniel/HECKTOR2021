@@ -137,12 +137,8 @@ class Model(nn.Module):
             layer = list(ff.keys())
             for ll in layer:
                 if ll.startswith('conv') or ll.startswith('fc'):
-                    try:
-                        weight = ff[ll][ll]['kernel:0'][:]
-                        bias = ff[ll][ll]['bias:0'][:]
-                    except:
-                        weight = ff[ll]['kernel'][:]
-                        bias = ff[ll]['bias'][:]
+                    weight = ff[ll]['kernel'][:]
+                    bias = ff[ll]['bias'][:]
                     weight_dict[ll+'.weight'] = Tensor(weight.T)
                     weight_dict[ll+'.bias'] = Tensor(bias.T)
         return weight_dict
