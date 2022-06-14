@@ -57,11 +57,6 @@ def get_param_files(path):
 def train(args, out_folder, device):
     ''' main training function '''
 
-    # fix the seed for reproducibility
-    seed = 42 
-    torch.manual_seed(seed)
-    np.random.seed(seed)
-
     train_args = {**args['data']['general'], **args['data']['train']}
     valid_args = {**args['data']['general'], **args['data']['valid']}
 
