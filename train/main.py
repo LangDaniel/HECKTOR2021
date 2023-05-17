@@ -98,7 +98,7 @@ def train(args, out_folder, device):
     
         mu = 0 
         for kk in range(1, len(breaks)):
-            mu += np.prod(1-surv_prob[:kk-1]) * surv_prob[kk] * breaks[kk]
+            mu += np.prod(surv_prob[:kk-1]) * (1-surv_prob[kk]) * breaks[kk]
     
         return mu
 
