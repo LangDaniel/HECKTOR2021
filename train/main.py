@@ -97,8 +97,8 @@ def train(args, out_folder, device):
         surv_prob = np.array(surv_prob).astype(float)
     
         mu = 0 
-        for ii in range(1, len(breaks)):
-            mu += np.prod(surv_prob[:ii]) * breaks[ii]
+        for kk in range(1, len(breaks)):
+            mu += np.prod(1-surv_prob[:kk-1]) * surv_prob[kk] * breaks[kk]
     
         return mu
 

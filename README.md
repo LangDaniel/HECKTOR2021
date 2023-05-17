@@ -7,6 +7,11 @@ to the MICCAI
 [HEad and neCK TumOR segmentation and outcome prediction in PET/CT images (HECKTOR) 2021 challenge](
 https://www.aicrowd.com/challenges/miccai-2021-hecktor).
 
+## Erratum
+
+Note: Index of $T^{max}$ in eq. (2) should be a $k$ not a $l$, i.e.
+$T_l^{max} \rightarrow T_k^{max}$ 
+
 ## Conda environments
 
 There are two files provided to generate conda environments which allow you
@@ -17,7 +22,7 @@ Run
 ```
 conda env create --file=<FILE.yaml>
 ```
-to generate the `(prep)` and `(train)` enviroments.
+to generate the `(prep)` and `(train)` environments.
 
 ## Data preparation
 
@@ -35,7 +40,7 @@ in the `train/` folder with the `(train)` conda environment.
 
 ### Pretrained weights 
 
-The pre-trained weights can be downloaded from
+The pretrained weights can be downloaded from
 [here](https://syncandshare.lrz.de/getlink/fiKHFuRVVsqcaR5CpvVweYNb/C3D_weights.h5)
 and have to be placed in the `data/weights/` folder.
 
